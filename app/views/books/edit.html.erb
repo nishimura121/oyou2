@@ -1,0 +1,24 @@
+<div class="container">
+	<div class="row">
+		<div class="col-xs-3"></div>
+		<div class="col-xs-6">
+<h1>Editing Book</h1>
+
+<% if @book.errors.any? %>
+	<h3><%= @book.errors.count %> error prohibited this obj from being saved:</h3>
+	<ul>
+		<% @book.errors.full_messages.each do |message| %>
+		<li><%= message %></li>
+		<% end %>
+	</ul>
+<% end %>
+
+
+<%= render "books/newform", book: @book %>
+<%= link_to "Show", @book, class: "book_#{@book.id}" %>
+<%= link_to "Back", books_path, class: "back" %>
+
+</div>
+<div class="col-xs-3"></div>
+
+</div>
